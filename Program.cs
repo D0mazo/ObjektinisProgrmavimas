@@ -40,6 +40,7 @@ namespace Temp
             }
 
             BadTires(vehiclesList);
+            CarPower(vehiclesList);
         }
 
         static void BadTires(List<Car> cars)
@@ -50,11 +51,23 @@ namespace Temp
                 {
                     if (tire.Pressure < 1)
                     {
-                        Console.WriteLine($"{car.Model}");
-                        break;
+                        Console.WriteLine($"Bad Car Pressure {car.Model}");
+                        
+                    }
+                }
+            }
+        }
+        static void CarPower(List<Car> cars)
+        {
+            foreach (var car in cars)
+            {
+               if (car.Engine.Power > 250)
+                    {
+                        Console.WriteLine($"Car with enginePowere more than 250 {car.Model}");
+                        
                     }
                 }
             }
         }
     }
-}
+
